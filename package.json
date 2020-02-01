@@ -20,6 +20,7 @@
   "dependencies": {
     "gatsby": "^2.19.10",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-playground": "^1.0.6",
     "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-source-contentful": "^2.1.84",
     "gatsby-source-filesystem": "^2.1.47",
