@@ -22,17 +22,13 @@ export const getWork = graphql`
           slug
           image:featuredImage {
             fluid {
-              src
-            }
-          }
-          description {
-            content {
-              content{
-                value
-              }
+              ...GatsbyContentfulFluid_withWebp
             }
           }
           link
+          description {
+            description
+          }
         }
       }
     }
