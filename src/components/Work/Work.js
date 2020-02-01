@@ -1,7 +1,9 @@
 import React from 'react'
 import SingleWork from './SingleWork'
 
-const Work = () => {
+const Work = ({ work }) => {
+  console.log(work);
+  
   return (
     <div>
       This is our Work component
