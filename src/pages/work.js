@@ -13,7 +13,7 @@ const WorkPage = ({ data }) => {
 }
 
 export const getWork = graphql`
-  query{
+  query {
     workEntry:allContentfulWork {
       edges {
         node {
