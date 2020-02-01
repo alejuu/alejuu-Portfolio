@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Work from '../components/Work/Work'
 import Layout from '../components/layout'
 
-export default class work extends Component {
-  render() {
-    return (
-      <Layout>
-        <h1>Work</h1>
-      </Layout>
-    )
-  }
+const WorkPage = () => {
+  return (
+    <Layout>
+      <h1>Work</h1>
+      <Work />
+    </Layout>
+  )
 }
+
+export default WorkPage
