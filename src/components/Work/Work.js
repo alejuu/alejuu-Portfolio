@@ -5,10 +5,14 @@ const Work = ({ work }) => {
   console.log(work);
   
   return (
-    <div>
-      This is our Work component
-      <SingleWork />
-    </div>
+    <section>
+      <h2>my Work</h2>
+      <div >
+        {work.map(({ node }) => {
+          return <SingleWork key={node.id} work={node} />
+        })}
+      </div>
+    </section>
   )
 }
 
