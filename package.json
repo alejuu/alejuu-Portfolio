@@ -5,7 +5,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "prebuild": "CI=1 npm i cypress",
+    "e2e": "cypress run",
+    "e2e:dev": "CYPRESS_baseUrl=http://localhost:8000 cypress open",
     "build": "gatsby build",
+    "postbuild": "gatsby serve & npm run e2e && fkill:9000",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -19,6 +23,8 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "cypress": "^3.8.3",
+    "fkill-cli": "^5.2.0",
     "prettier": "^1.19.1"
   },
   "repository": {
