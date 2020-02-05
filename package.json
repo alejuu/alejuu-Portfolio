@@ -21,6 +21,8 @@
     "gatsby": "^2.19.12",
     "gatsby-image": "^2.2.40",
     "gatsby-plugin-playground": "^1.0.6",
+    "gatsby-plugin-postcss": "^2.1.20",
+    "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-contentful": "^2.1.84",
     "gatsby-source-filesystem": "^2.1.48",
@@ -29,9 +31,14 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
     "cypress": "^3.8.3",
     "fkill-cli": "^5.2.0",
-    "prettier": "^1.19.1"
+    "postcss-cli": "^7.1.0",
+    "prettier": "^1.19.1",
+    "tailwindcss": "^1.1.4"
   },
   "repository": {
     "type": "git",
