@@ -9,14 +9,25 @@ require('dotenv').config({
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `alejuu`,
+    description: `Alejandro Juarez personal Portfolio - Front-end Web Developer, UI/UX designer and E-commerce consultant`,
+    author: `@alejuu`
+  },
   plugins: [
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images/`,
-    //   }
-    // },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `alejuu`,
+        short_name: `alejuu`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#4dc0b5`,
+        display: `minimal-ui`,
+        // icon: `src/images/tailwind-icon.png`,
+      }
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -25,6 +36,15 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images/`,
+    //   }
+    // },
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-plugin-postcss",
       options: {
@@ -42,8 +62,7 @@ module.exports = {
         purgeOnly: [`src/css/style.css`]
       }
     },
-    `gatsby-transformer-sharp`, 
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-playground`
+    `gatsby-plugin-playground`,
+    `gatsby-plugin-offline`
   ]
 }
