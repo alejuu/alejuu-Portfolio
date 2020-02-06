@@ -1,11 +1,16 @@
 import React from 'react'
 import Work from '../components/Work/Work'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 
 const WorkPage = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        keywords={[`alejuu`, `web development`, `react`, `gatsby`]}
+        title="Work" 
+      />
       <h1>Work</h1>
       <Work work={data.workEntry.edges} />
     </Layout>
