@@ -9,7 +9,7 @@ const WorkPage = ({ data }) => {
     <Layout>
       <SEO
         keywords={[`alejuu`, `web development`, `react`, `gatsby`]}
-        title="Work" 
+        title='Work' 
       />
       <h1>Work</h1>
       <Work work={data.workEntry.edges} />
