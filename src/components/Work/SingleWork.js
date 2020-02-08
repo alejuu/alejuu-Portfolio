@@ -1,27 +1,19 @@
 import React from 'react'
 import Image from 'gatsby-image'
-import { Link } from 'gatsby'
+import { SpringLink } from  '../react-spring-animation'
 
 const SingleWork = ({ work }) => {
-  const { title, slug, image, link, description } = work
+  const { title, slug, image } = work
 
   return (
     <article>
       <div>
         <Image fluid={image.fluid} alt={title} />
-        <Link to={`/work/${slug}`}>
-          details
-        </Link>
-        <span>{link}</span>
-      </div>
-      <div >
         <h3>{title}</h3>
-        <div>
-        <p>{description.description}</p>
-        </div>
+        <SpringLink to={`/work/${slug}`}>details</SpringLink>
       </div>
     </article>
-    )
+  )
 }
 
 export default SingleWork

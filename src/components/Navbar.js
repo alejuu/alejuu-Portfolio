@@ -1,5 +1,6 @@
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
+import { SpringLink } from '../components/react-spring-animation'
 
 const Navbar = () => {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -16,20 +17,11 @@ const Navbar = () => {
   return (
     <header className='bg-black'>
       <div className='flex flex-wrap items-center justify-between max-w-4xl mx-auto p-2'>
-        <Link className='flex items-center no-underline text-white' to='/'>
-          <svg
-            className='fill-current h-8 mr-2 w-8'
-            height='54'
-            viewBox='0 0 54 54'
-            width='54'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z' />
-          </svg>
+        <SpringLink className='flex items-center no-underline text-white' to='/'>
           <span className='font-bold text-xl tracking-tight'>
             {site.siteMetadata.title}
           </span>
-        </Link>
+        </SpringLink>
         <button
           className='block md:hidden border border-white flex items-center px-3 py-2 rounded text-white'
           onClick={() => toggleExpansion(!isExpanded)}
@@ -58,13 +50,7 @@ const Navbar = () => {
               title: `Work`
             },
           ].map(link => (
-            <Link
-              className='block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-white'
-              key={link.title}
-              to={link.route}
-            >
-              {link.title}
-            </Link>
+            <SpringLink className='block md:inline-block mt-4 md:mt-0 md:ml-6 no-underline text-white' key={link.title} to={link.route}>{link.title}</SpringLink>
           ))}
         </nav>
       </div>

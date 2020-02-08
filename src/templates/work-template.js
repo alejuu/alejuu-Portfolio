@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Image from 'gatsby-image'
-import { Link } from 'gatsby'
+import { SpringLink } from '../components/react-spring-animation'
 
 const WorkTemplate = ({ data }) => {
   const {
@@ -17,13 +17,13 @@ const WorkTemplate = ({ data }) => {
       <section>
         <div>
           <div>
-            <Image fluid={image.fluid} alt={title} />
-        
+            <Image fluid={image.fluid} alt={title} />      
             <h2>{title}</h2>
           </div>
           <p>{description}</p>
-          <span>{link}</span>
-          <Link to="/work">back to work</Link>
+          <a href={link} target='_blank' rel='noopener noreferrer'>Open site</a>
+          <hr></hr>
+          <SpringLink className='bg-yellow-600' to='/work'>back to work</SpringLink>
         </div>
       </section>
     </Layout>
