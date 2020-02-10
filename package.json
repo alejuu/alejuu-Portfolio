@@ -44,7 +44,7 @@
     "fkill-cli": "^5.2.0",
     "postcss-cli": "^7.1.0",
     "prettier": "^1.19.1",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.2.0"
   },
   "repository": {
     "type": "git",
