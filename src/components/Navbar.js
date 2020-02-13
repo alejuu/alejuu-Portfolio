@@ -15,7 +15,7 @@ const Navbar = () => {
   `)
 
   return (
-    <header className='bg-black'>
+    <header className='fixed w-full z-10 top-0 bg-black'>
       <div className='flex flex-wrap items-center justify-between max-w-4xl mx-auto p-2'>
         <SpringLink className='flex items-center no-underline text-white' to='/'>
           <span className='font-bold text-xl tracking-tight'>

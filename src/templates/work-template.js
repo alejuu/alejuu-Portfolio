@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import Image from 'gatsby-image'
 import { SpringLink } from '../components/react-spring-animation'
 
@@ -14,6 +15,10 @@ const WorkTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        keywords={[`alejuu`, `web development`, `react`, `gatsby`, `${title}`]}
+        title={title}
+      />
       <section>
         <div>
           <div>
@@ -37,7 +42,7 @@ export const query = graphql`
       title
       slug
       image:featuredImage {
-        fluid {
+        fluid(maxWidth: 300, maxHeight: 400) {
           ...GatsbyContentfulFluid_withWebp
         }
       }

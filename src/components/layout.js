@@ -7,7 +7,11 @@ const layout = ({ children }) => {
     <>
       <Navbar />
       <MySpring>
-        <main>{children}</main>
+        <main className='h-screen flex items-center justify-center pt-12'>
+          <section className='container flex items-center justify-center mx-auto'>
+            {children}
+          </section> 
+        </main>
       </MySpring>      
     </>
   )
