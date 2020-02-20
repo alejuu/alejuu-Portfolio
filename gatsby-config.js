@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#4dc0b5`,
         display: `minimal-ui`,
-        icon: `src/images/tailwind-icon.png`,
+        icon: `src/images/tailwind-icon.png`
       }
     },
     {
@@ -33,8 +33,8 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_ID,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
     },
     // {
     //   resolve: `gatsby-source-filesystem`,
@@ -43,6 +43,14 @@ module.exports = {
     //     path: `${__dirname}/src/images/`,
     //   }
     // },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Raleway', 'Ovo']
+        }
+      }
+    },
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
