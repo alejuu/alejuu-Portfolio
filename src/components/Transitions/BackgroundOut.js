@@ -1,7 +1,6 @@
 import React from 'react'
 import { Spring } from 'react-spring/renderprops'
 import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
-import Styles from './transition.module.css'
 
 const MySpringBackgroundOut = ({ children }) => (
   <TransitionState>
@@ -18,7 +17,7 @@ const MySpringBackgroundOut = ({ children }) => (
           }}
         > 
           {props => 
-            <div className={Styles.container} style={props}>
+            <div className='flex justify-center items-center h-screen will-change-background' style={props}>
               <Spring
                 to={{
                   transform: `scale3d(${mount ? 0.6 : 1.5}, ${mount ? 0.6 : 1.5}, ${mount ? 0.6 : 1.5}) rotate(${mount ? '0deg' : '45deg'})`,
@@ -28,7 +27,7 @@ const MySpringBackgroundOut = ({ children }) => (
                 }}
               >
                 {props => 
-                  <svg className={Styles.shape} style={props} version='1.1' viewBox='0 0 400 400'>
+                  <svg className='will-change-transform' style={props} version='1.1' width='100%' height='100%'>
                     <Spring
                       to={{
                         fill: mount ? '#247BA0' : '#70C1B3',
@@ -41,7 +40,7 @@ const MySpringBackgroundOut = ({ children }) => (
                         <g style={props}>
                           <Spring
                             to={{
-                              shape: mount ? 'M20,380 L380,380 L380,380 L200,20 L20,380 Z' : 'M20,20 L20,380 L380,380 L380,20 L20,20 Z',
+                              shape: mount ? 'M 350 200 L 400 250 L 350 300 L 350 550 L 400 600 L 800 600 L 800 0 L 350 0 L 400 50 L 350 100 L 400 150 Z' : 'M 550 450 L 600 500 L 650 500 L 700 550 L 750 550 L 800 600 L 800 0 L 350 350 L 400 400 L 450 400 L 500 450 Z',
                             }}
                             config={{
                               duration: ms,
