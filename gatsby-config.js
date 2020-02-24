@@ -12,7 +12,8 @@ module.exports = {
   siteMetadata: {
     title: `alejuu`,
     description: `Alejandro Juarez personal Portfolio - Front-end Web Developer, UI/UX designer and E-commerce consultant`,
-    author: `@alejuu`
+    author: `@alejuu`,
+    siteURL: 'http://localhost:8000/'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

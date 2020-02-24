@@ -3,14 +3,15 @@ import Navbar from './Navbar'
 import { MySpring } from '../components/react-spring-animation'
 
 const layout = ({ children }) => {
+  // const url = window.location.href;
+  // console.log(url);
+  
   return (
     <>
       <Navbar />
       <MySpring>
-        <main className='h-screen flex items-center justify-center pt-12'>
-          <section className='container flex items-center justify-center mx-auto'>
-            {children}
-          </section> 
+        <main className='h-screen'>
+          {children}
         </main>
       </MySpring>      
     </>

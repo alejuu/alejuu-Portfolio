@@ -2,7 +2,7 @@ import React from 'react'
 import SingleWork from './SingleWork'
 
 const Work = ({ work }) => {
-  console.log(work);
+  // console.log(work);
   
   return (
     <section className='h-full w-full'>

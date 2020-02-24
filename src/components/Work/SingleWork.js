@@ -12,7 +12,7 @@ const SingleWork = ({ work }) => {
         <div className={Styles.articleImage}>
           <Image fluid={image.fluid} alt={title} /> 
         </div>
-        <div classNamme='d-flex flex-column justify-center items-center'>
+        <div className='d-flex flex-column justify-center items-center'>
           <h3 className='text-lg text-white'>{title}</h3>
           <SpringLink className='bg-yellow-600 hover:text-red-600' to={`/work/${slug}`}>details</SpringLink>
         </div>      

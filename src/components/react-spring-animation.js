@@ -24,8 +24,8 @@ const MySpring = ({ children }) => (
   </TransitionState>
 )
 
-const SpringLink = ({ to, className, children }) => (
-  <TransitionLink to={to} className={className} exit={{ length: 1 }} entry={{ length: 1 }}>
+const SpringLink = ({ to, className, activeClassName, children }) => (
+  <TransitionLink to={to} className={className} activeClassName={activeClassName} exit={{ length: 1 }} entry={{ length: 1 }}>
     {children}
   </TransitionLink>
 )
