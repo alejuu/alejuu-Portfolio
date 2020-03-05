@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
+import { globalHistory as history } from '@reach/router'
 import { SpringLink } from '../components/react-spring-animation'
 
 const Navbar = () => {
@@ -15,13 +16,12 @@ const Navbar = () => {
     }
   `)
 
-  
-  // const test = site.siteMetadata.siteURL
-  // console.log(test)
-  
-  const homeUrl = window.location.href
+  const { location } = history
+  // console.log( location.pathname )
+
+  const homeUrl = location.pathname
   let homeClass = 'flex'
-  if (homeUrl === site.siteMetadata.siteURL) {
+  if (homeUrl === '/') {
     homeClass = 'hidden'
   }
   const currentClass = homeClass
