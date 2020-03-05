@@ -2,7 +2,20 @@ import React, { PureComponent } from 'react'
 import { Spring } from 'react-spring/renderprops'
 
 class Loading extends PureComponent {
-  static style = ({ props }) => ({
+  static styleBackground = ({ props }) => ({
+    background: 'black',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    height: '100%',
+    width: '100%',
+    opacity: props.opacity,
+    transition: 'opacity 0.5s',
+    animationDelay: '20s',
+    zIndex: 1
+  })
+
+  static styleCircle = ({ props }) => ({
     border: '10px solid black',
     borderRadius: '100%',
     height: props.diameter,
@@ -15,20 +28,29 @@ class Loading extends PureComponent {
     zIndex: 1
   })
 
-  handleRest = () => {
-    this.forceUpdate()
-  }
+  // handleRest = () => {
+  //   this.forceUpdate()
+  // }
 
   render() {
     return (
-      <Spring
-        reset
-        from={{ opacity: 1, diameter: 0 }}
-        to={{ opacity: 0, diameter: 100 }}
-        onRest={this.handleRest}
-      >
-        {props => <div style={Loading.style({ props })} />}
-      </Spring>
+      <div>
+        <Spring
+          reset
+          from={{ opacity: 1 }}
+          to={{ opacity: 0 }}
+        >
+          {props => <div style={Loading.styleBackground({ props })} />}
+        </Spring>
+        <Spring
+          reset
+          from={{ opacity: 1, diameter: 0 }}
+          to={{ opacity: 0, diameter: 100 }}
+          // onRest={this.handleRest}
+        >
+          {props => <div style={Loading.styleCircle({ props })} />}
+        </Spring>
+      </div>    
     )
   }
 }
