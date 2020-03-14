@@ -4,4 +4,5 @@
 /* purgecss end ignore */
 @tailwind utilities;
 /* extra utilities */
-@import '../css/utilities/animation.css'
+@import '../css/utilities/animation.css';
+@import '../css/utilities/extra-height.css';
