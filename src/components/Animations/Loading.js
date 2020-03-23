@@ -15,6 +15,8 @@ class Loading extends PureComponent {
   })
 
   static styleCircle = ({ props }) => ({
+    position: 'relative',
+    visibility: 'visible',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -23,7 +25,11 @@ class Loading extends PureComponent {
     height: props.diameter,
     opacity: props.opacity,
     width: props.diameter,
-    zIndex: props.zIndex
+    zIndex: props.zIndex,
+    marginLeft: '-100%',
+    marginRight: '-100%',
+    marginTop: '-100%',
+    marginBottom: '-100%'
   })
 
   // handleRest = () => {
@@ -35,25 +41,26 @@ class Loading extends PureComponent {
       <div>
         <Spring
           reset
-          from={{ opacity: 1, zIndex: 1 }}
+          from={{ opacity: 1, zIndex: 100 }}
           to={{ opacity: 0, zIndex: -1 }}
-          config={{ tension: 1, friction: 1, precision: 0.1, delay: 50 }}
+          config={{ precision: 0.1, delay: 1200 }}
         >
           {props => <div style={Loading.styleBackground({ props })} />}
         </Spring>
-        <div className='absolute top-0 left-0 w-full h-full -z-10'>
+        <div className='absolute top-0 left-0 w-full h-full invisible'>
           <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
             <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
               <div className='flex flex-col items-center justify-center h-full'>
                 <Spring
                   reset
-                  from={{ opacity: 1, diameter: 100, zIndex: 1 }}
-                  to={{ opacity: 0, diameter: 500, zIndex: -1 }}
+                  from={{ opacity: 1, diameter: '100px', zIndex: 100 }}
+                  to={{ opacity: 0, diameter: '500px', zIndex: -1 }}
+                  config={{ tension: 0.5, friction: 0.5, precision: 0.1 }}
                   // onRest={this.handleRest}
                 >
                   {props => 
-                    <div style={Loading.styleCircle({ props })}>
-                      <span className='font-serif text-6xl text-white'>A</span>
+                    <div className='kaka' style={Loading.styleCircle({ props })}>
+                      <span className='font-serif text-6xl text-white visible'>A</span>
                     </div>
                   }
                 </Spring>

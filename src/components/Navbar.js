@@ -28,14 +28,14 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className='fixed z-10 top-auto transform rotate-90 mt-8'>
+      <div className='fixed z-50 top-auto transform rotate-90 mt-8'>
         <SpringLink to='/'>
           <span className='font-serif font-bold text-xl tracking-tight underline text-white'>
             {site.siteMetadata.title}
           </span>
         </SpringLink>
       </div>
-      <div className={`${currentClass} flex-wrap items-center justify-end fixed z-10 w-full top-0 mx-auto p-2`}>
+      <div className={`${currentClass} flex-wrap items-center justify-end fixed z-50 w-full top-0 mx-auto p-2`}>
         <button
           className='block md:hidden border border-white flex items-center px-3 py-2 rounded'
           onClick={() => toggleExpansion(!isExpanded)}
