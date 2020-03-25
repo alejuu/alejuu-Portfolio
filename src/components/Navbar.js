@@ -18,24 +18,26 @@ const Navbar = () => {
 
   const { location } = history
   // console.log( location.pathname )
-
   const homeUrl = location.pathname
-  let homeClass = 'flex'
+  let logoClass = 'text-black'
+  let navClass = 'flex'
   if (homeUrl === '/') {
-    homeClass = 'hidden'
+    logoClass = 'text-white'
+    navClass = 'hidden'
   }
-  const currentClass = homeClass
+  const logoCurrent = logoClass
+  const navCurrent = navClass
 
   return (
     <header>
       <div className='fixed z-50 top-auto transform rotate-90 mt-8'>
         <SpringLink to='/'>
-          <span className='font-serif font-bold text-xl tracking-tight underline text-white'>
+          <span className={`font-serif font-bold text-xl tracking-tight underline ${logoCurrent}`}>
             {site.siteMetadata.title}
           </span>
         </SpringLink>
       </div>
-      <div className={`${currentClass} flex-wrap items-center justify-end fixed z-50 w-full top-0 mx-auto p-2`}>
+      <div className={`${navCurrent} flex-wrap items-center justify-end fixed z-50 w-full top-0 mx-auto p-2`}>
         <button
           className='block md:hidden border border-white flex items-center px-3 py-2 rounded'
           onClick={() => toggleExpansion(!isExpanded)}
@@ -64,7 +66,7 @@ const Navbar = () => {
               title: `Work`
             },
           ].map(link => (
-            <SpringLink className='block md:inline-block mt-4 md:mt-0 md:ml-6 font-serif text-white' activeClassName='underline' key={link.title} to={link.route}>{link.title}</SpringLink>
+            <SpringLink className='block md:inline-block mt-4 md:mt-0 md:ml-6 font-serif text-black' activeClassName='underline' key={link.title} to={link.route}>{link.title}</SpringLink>
           ))}
         </nav>
       </div>
