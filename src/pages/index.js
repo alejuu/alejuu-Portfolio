@@ -36,17 +36,17 @@ const index = () => {
                   <h3 className='text-4xl md:text-6xl'>Contact</h3>
                 </OpacitySpring>
               </BoxSpring>
-              <BackgroundSpring />
-              <div className='absolute top-0 left-0 w-full h-full invisible'>
-                <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
-                  <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
-                    <div className='flex flex-col items-center justify-center h-full'>
-                      <CircleSpring>
-                        <span className='font-serif text-6xl text-white visible'>A</span>
-                      </CircleSpring>
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <BackgroundSpring />
+        <div className='absolute top-0 left-0 w-full h-full invisible'>
+          <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
+            <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
+              <div className='flex flex-col items-center justify-center h-full'>
+                <CircleSpring>
+                  <span className='font-serif text-6xl text-white visible'>A</span>
+                </CircleSpring>
               </div>
             </div>
           </div>
