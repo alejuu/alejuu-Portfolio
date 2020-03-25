@@ -11,7 +11,11 @@ const WorkPage = ({ data }) => {
         keywords={[`alejuu`, `web development`, `react`, `gatsby`]}
         title='Work' 
       />
-      <Work work={data.workEntry.edges} />
+      <section className='w-full h-full'>
+        <div className='flex flex-col items-center justify-center w-full h-full'>
+          <Work work={data.workEntry.edges} />
+        </div>
+      </section>     
     </Layout>
   )
 }
@@ -25,8 +29,11 @@ export const getWork = graphql`
           title
           slug
           image:featuredImage {
-            fluid {
+            fluid(maxHeight: 100) {
               ...GatsbyContentfulFluid_withWebp
+            }
+            fixed(height: 150) {
+              ...GatsbyContentfulFixed_withWebp
             }
           }
           link

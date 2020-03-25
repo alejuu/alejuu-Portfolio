@@ -5,13 +5,11 @@ const Work = ({ work }) => {
   // console.log(work);
   
   return (
-    <section className='h-full w-full'>
-      <div className='flex flex-wrap'>
-        {work.map(({ node }) => {
-          return <SingleWork key={node.id} work={node} />
-        })}
-      </div>
-    </section>
+    <div className='h-full w-full max-w-screen-lg grid grid-cols-6 row-gap-0 gap-4'>
+      {work.map(({ node }) => {
+        return <SingleWork key={node.id} work={node} />
+      })}
+    </div>
   )
 }
 
