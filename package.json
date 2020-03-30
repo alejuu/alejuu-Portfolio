@@ -29,7 +29,7 @@
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-contentful": "^2.1.98",
+    "gatsby-source-contentful": "^2.2.5",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
     "react": "^16.13.1",
