@@ -1,5 +1,6 @@
 import React from 'react'
 import { Spring } from 'react-spring/renderprops'
+import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
 
 const BackgroundSpring = () => {
   return (
@@ -37,7 +38,7 @@ const OpacitySpring = ({ children, className }) => {
   )
 }
 
-const BoxSpring = ({ children, className }) => {
+const SlideSpring = ({ children, className }) => {
   return (
     <Spring
       from={{ transform: `translateX(${-100}vw)` }}
@@ -49,4 +50,27 @@ const BoxSpring = ({ children, className }) => {
   )
 }
 
-export { BackgroundSpring, CircleSpring, OpacitySpring, BoxSpring }
+const SlideTransitionSpring = ({ children, className }) => (
+  <TransitionState>
+    {({ mount, current }) => {
+      const ms = current.length * 1000
+
+      return (
+        <Spring
+          to={{ transform: `translateX(0)` }}
+          config={{ duration: ms }}
+        >
+          {props => <div className={className} style={props}>{children}</div>}
+        </Spring>
+      )
+    }}
+  </TransitionState>
+)
+
+const SlideTransitionSpringLink = ({ to, className, children }) => (
+  <TransitionLink to={to} className={className} exit={{ length: 1 }} entry={{ length: 1 }}>
+    {children}
+  </TransitionLink>
+)
+
+export { BackgroundSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, SlideTransitionSpringLink }

@@ -1,8 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { SpringLink } from '../components/react-spring-animation'
-import { BackgroundSpring, CircleSpring, OpacitySpring, BoxSpring } from '../components/Animations/IndexTransitions'
+import { BackgroundSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, SlideTransitionSpringLink } from '../components/Animations/IndexAnimations'
 
 const index = () => {
   return (
@@ -26,17 +25,17 @@ const index = () => {
             </div>
           </div>
           <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-4 xl:col-span-4'>
-            <div className='flex flex-col items-center justify-center h-full'>
-              <BoxSpring className='relative z-10 max-w-screen-sm w-1/2 bg-black p-4'>
+            <SlideSpring className='flex flex-col items-center justify-center h-full'>
+              <SlideTransitionSpring className='relative z-10 max-w-screen-sm w-1/2 bg-black p-4'>
                 <OpacitySpring className='h-full w-full text-center md:text-left text-white'>
                   <h3 className='text-4xl md:text-6xl'>About</h3>
                   <h3 className='text-4xl md:text-6xl'>
-                    <SpringLink to='/work'>Work</SpringLink>
+                    <SlideTransitionSpringLink to='/work'>Work</SlideTransitionSpringLink>
                   </h3>
                   <h3 className='text-4xl md:text-6xl'>Contact</h3>
                 </OpacitySpring>
-              </BoxSpring>
-            </div>
+              </SlideTransitionSpring>
+            </SlideSpring>
           </div>
         </div>
         <BackgroundSpring />
