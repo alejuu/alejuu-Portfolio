@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BackgroundSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, SlideTransitionSpringLink } from '../components/Animations/IndexAnimations'
+import { BackgroundSpring, BackgroundSvgSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, SlideTransitionSpringLink } from '../components/Animations/IndexAnimations'
 
 const index = () => {
   return (
@@ -11,34 +11,37 @@ const index = () => {
         title='Home'
       />
       <section className='w-full h-full'>
-        <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
-          <div className='relative z-20 h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2 bg-black'>
+        <div className='grid grid-cols-6 row-gap-0 gap-4 h-full bg-gradient-r-grey-white'>
+          <div className='relative z-20 h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
             <div className='flex flex-col items-center h-full'>
               <div className='invisible h-20 w-20 mt-auto'/>
               <div className='rounded-full h-32 w-32 md:h-48 md:w-48 flex items-center justify-center bg-white'>
                 <span className='font-serif font-bold text-6xl tracking-tight underline'>A</span>
               </div>
-              <OpacitySpring className='text-center md:text-left h-20 mb-auto'>
+              <div className='text-center md:text-left h-20 mb-auto'>
                 <h1 className='font-serif font-bold text-2xl md:text-3xl text-white mt-2 md:mt-4'>Alejandro Juarez</h1>
                 <h2 className='font-normal text-1xl md:text-2xl text-white'>Web Developer</h2>
-              </OpacitySpring>
+              </div>
             </div>
           </div>
           <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-4 xl:col-span-4'>
-            <SlideSpring className='flex flex-col items-center justify-center h-full'>
-              <SlideTransitionSpring className='relative z-10 max-w-screen-sm w-1/2 bg-black p-4'>
-                <OpacitySpring className='h-full w-full text-center md:text-left text-white'>
+            <div className='flex flex-col items-center justify-center h-full'>
+              <div className='relative z-10 max-w-screen-sm w-1/2 p-4'>
+                <div className='h-full w-full text-center md:text-left text-white'>
                   <h3 className='text-4xl md:text-6xl'>About</h3>
                   <h3 className='text-4xl md:text-6xl'>
                     <SlideTransitionSpringLink to='/work'>Work</SlideTransitionSpringLink>
                   </h3>
                   <h3 className='text-4xl md:text-6xl'>Contact</h3>
-                </OpacitySpring>
-              </SlideTransitionSpring>
-            </SlideSpring>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <BackgroundSpring />
+        <div className='fixed top-0 left-0 h-full w-full'>
+          <BackgroundSvgSpring />
+        </div>
         <div className='absolute top-0 left-0 w-full h-full invisible'>
           <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
             <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
