@@ -18,10 +18,10 @@ const Navbar = () => {
 
   const { location } = history
   // console.log( location.pathname )
-  const homeUrl = location.pathname
+  const pageUrl = location.pathname
   let logoClass = 'text-black'
   let navClass = 'flex'
-  if (homeUrl === '/') {
+  if (pageUrl === '/') {
     logoClass = 'text-white'
     navClass = 'hidden'
   }
