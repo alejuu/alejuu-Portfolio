@@ -14,7 +14,7 @@ const BackgroundSpring = () => {
   )
 }
 
-const BackgroundSvgSpring = () => {
+const BackgroundSVGSpring = () => {
   const PathSpring = Keyframes.Spring(async next => {
     while (true) {
       await next({
@@ -63,28 +63,30 @@ const BackgroundSvgSpring = () => {
     }
   })
   return (
-    <svg className='w-full h-screen' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none'>
-      <defs>
-        <linearGradient id='grad-1' x1='0%' y1='0%' x2='100%' y2='0%'>
-          <StopOneSpring native>
-            {props =>
-              <animated.stop offset='0%' style={props} />
-            }
-          </StopOneSpring>
-          <StopTwoSpring native>
-            {props =>
-              <animated.stop offset='100%' style={props} />
-            }
-          </StopTwoSpring>
-        </linearGradient>
-      </defs>
-      
-      <PathSpring native>
-        {props =>
-          <animated.path className='bg-gradient-r-red-blue' id='path-1' stroke='white' strokeWidth='5' strokeDasharray='.2 5' d={props.shape} fill='url(#grad-1)' />
-        }
-      </PathSpring>
-    </svg>
+    <div className='fixed top-0 left-0 h-full w-full'>
+      <svg className='w-full h-screen' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none'>
+        <defs>
+          <linearGradient id='grad-1' x1='0%' y1='0%' x2='100%' y2='0%'>
+            <StopOneSpring native>
+              {props =>
+                <animated.stop offset='0%' style={props} />
+              }
+            </StopOneSpring>
+            <StopTwoSpring native>
+              {props =>
+                <animated.stop offset='100%' style={props} />
+              }
+            </StopTwoSpring>
+          </linearGradient>
+        </defs>
+        
+        <PathSpring native>
+          {props =>
+            <animated.path className='bg-gradient-r-red-blue' id='path-1' stroke='white' strokeWidth='5' strokeDasharray='.2 5' d={props.shape} fill='url(#grad-1)' />
+          }
+        </PathSpring>
+      </svg>
+    </div>
   )
 }
 
@@ -143,7 +145,7 @@ const SlideTransitionSpring = ({ children, className }) => (
   </TransitionState>
 )
 
-const BackgroundTransitionSpring = ({ children, className }) => (
+const BackgroundIndexTransitionSpring = ({ children, className }) => (
   <TransitionState>
     {({ mount, current }) => {
       const ms = current.length * 1000
@@ -151,7 +153,49 @@ const BackgroundTransitionSpring = ({ children, className }) => (
       return (
         <Spring
           to={{ 
-            backgroundImage: `linear-gradient(90deg, ${mount ? '#e6e9f0' : '#2b5876'}, ${mount ? '#cfd9df' : '#4e4376'})`
+            backgroundImage: `linear-gradient(90deg, ${mount ? '#e6e9f0' : '#8baaaa'}, ${mount ? '#cfd9df' : '#ae8b9c'})`
+          }}
+          config={{ 
+            duration: ms 
+          }}
+        >
+          {props => <div className={className} style={props}>{children}</div>}
+        </Spring>
+      )
+    }}
+  </TransitionState>
+)
+
+const BackgroundWorkTransitionSpring = ({ children, className }) => (
+  <TransitionState>
+    {({ mount, current }) => {
+      const ms = current.length * 1000
+
+      return (
+        <Spring
+          to={{ 
+            backgroundImage: `linear-gradient(90deg, ${mount ? '#8baaaa' : '#e6e9f0'}, ${mount ? '#ae8b9c' : '#cfd9df'})`
+          }}
+          config={{ 
+            duration: ms 
+          }}
+        >
+          {props => <div className={className} style={props}>{children}</div>}
+        </Spring>
+      )
+    }}
+  </TransitionState>
+)
+
+const OpacityTransitionSpring = ({ children, className }) => (
+  <TransitionState>
+    {({ mount, current }) => {
+      const ms = current.length * 1000
+
+      return (
+        <Spring
+          to={{ 
+            opacity: mount ? 1 : 0
           }}
           config={{ 
             duration: ms 
@@ -165,9 +209,14 @@ const BackgroundTransitionSpring = ({ children, className }) => (
 )
 
 const TransitionSpringLink= ({ to, className, children }) => (
-  <TransitionLink to={to} className={className} exit={{ length: 1 }} entry={{ length: 1 }}>
+  <TransitionLink 
+    to={to} 
+    className={className} 
+    exit={{ length: 1 }} 
+    entry={{ length: 1 }}
+  >
     {children}
   </TransitionLink>
 )
 
-export { BackgroundSpring, BackgroundSvgSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, BackgroundTransitionSpring, TransitionSpringLink}
+export { BackgroundSpring, BackgroundSVGSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, BackgroundIndexTransitionSpring, BackgroundWorkTransitionSpring, OpacityTransitionSpring, TransitionSpringLink }

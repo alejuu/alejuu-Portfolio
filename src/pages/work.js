@@ -3,6 +3,7 @@ import Work from '../components/Work/Work'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
+import { BackgroundWorkTransitionSpring } from '../components/Animations/IndexAnimations';
 
 const WorkPage = ({ data }) => {
   return (
@@ -11,11 +12,11 @@ const WorkPage = ({ data }) => {
         keywords={[`alejuu`, `web development`, `react`, `gatsby`]}
         title='Work' 
       />
-      <section className='w-full h-full'>
+      <BackgroundWorkTransitionSpring className='w-full h-full'>
         <div className='flex flex-col items-center justify-center w-full h-full'>
           <Work work={data.workEntry.edges} />
         </div>
-      </section>     
+      </BackgroundWorkTransitionSpring>     
     </Layout>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BackgroundTransitionSpring, TransitionSpringLink } from '../components/Animations/IndexAnimations'
+import { BackgroundIndexTransitionSpring, OpacityTransitionSpring, TransitionSpringLink } from '../components/Animations/IndexAnimations'
 
 const index = () => {
   return (
@@ -10,7 +10,7 @@ const index = () => {
         keywords={[`alejuu`, `webdeveloper`, `react`, `ui`]}
         title='Home'
       />
-      <BackgroundTransitionSpring className='w-full h-full'>
+      <BackgroundIndexTransitionSpring className='w-full h-full'>
         <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
           <div className='relative z-20 h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
             <div className='flex flex-col items-center h-full'>
@@ -27,18 +27,18 @@ const index = () => {
           <div className='h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-4 xl:col-span-4'>
             <div className='flex flex-col items-center justify-center h-full'>
               <div className='relative z-10 max-w-screen-sm w-1/2 p-4'>
-                <div className='h-full w-full text-center md:text-left text-white'>
+                <OpacityTransitionSpring className='h-full w-full text-center md:text-left text-white'>
                   <h3 className='text-4xl md:text-6xl tracking-wide font-bold'>About</h3>
                   <h3 className='text-4xl md:text-6xl tracking-wide font-bold'>
                     <TransitionSpringLink to='/work'>Work</TransitionSpringLink>
                   </h3>
                   <h3 className='text-4xl md:text-6xl tracking-wide font-bold'>Contact</h3>
-                </div>
+                </OpacityTransitionSpring>
               </div>
             </div>
           </div>
         </div>
-      </BackgroundTransitionSpring>   
+      </BackgroundIndexTransitionSpring>   
     </Layout>
   )
 }
