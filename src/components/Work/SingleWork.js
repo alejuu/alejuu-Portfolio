@@ -1,14 +1,13 @@
 import React from 'react'
 import Image from 'gatsby-image'
 import { SpringLink } from  '../react-spring-animation'
-// import Styles from './work.module.css'
 
 const SingleWork = ({ work }) => {
   const { title, slug, image } = work
 
   return (
     <div className='col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-3 xl:col-span-3 p-12'>
-      <article className='h-full bg-black overflow-hidden p-6'>
+      <article className='h-full overflow-hidden p-6'>
         <div className='h-full w-full flex justify-center items-center'>
           <div className='max-w-xs w-full'>
             <SpringLink to={`/work/${slug}`}>
