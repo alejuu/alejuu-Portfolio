@@ -81,7 +81,7 @@ const BackgroundSvgSpring = () => {
       
       <PathSpring native>
         {props =>
-          <animated.path className='bg-gradient-r-red-blue' id='path-1' stroke='white' stroke-width='5' stroke-dasharray='.2 5' d={props.shape} fill='url(#grad-1)' />
+          <animated.path className='bg-gradient-r-red-blue' id='path-1' stroke='white' strokeWidth='5' strokeDasharray='.2 5' d={props.shape} fill='url(#grad-1)' />
         }
       </PathSpring>
     </svg>
@@ -124,6 +124,8 @@ const SlideSpring = ({ children, className }) => {
   )
 }
 
+// Page Transitions
+
 const SlideTransitionSpring = ({ children, className }) => (
   <TransitionState>
     {({ mount, current }) => {
@@ -141,10 +143,31 @@ const SlideTransitionSpring = ({ children, className }) => (
   </TransitionState>
 )
 
-const SlideTransitionSpringLink = ({ to, className, children }) => (
+const BackgroundTransitionSpring = ({ children, className }) => (
+  <TransitionState>
+    {({ mount, current }) => {
+      const ms = current.length * 1000
+
+      return (
+        <Spring
+          to={{ 
+            backgroundImage: `linear-gradient(90deg, ${mount ? '#e6e9f0' : '#2b5876'}, ${mount ? '#cfd9df' : '#4e4376'})`
+          }}
+          config={{ 
+            duration: ms 
+          }}
+        >
+          {props => <div className={className} style={props}>{children}</div>}
+        </Spring>
+      )
+    }}
+  </TransitionState>
+)
+
+const TransitionSpringLink= ({ to, className, children }) => (
   <TransitionLink to={to} className={className} exit={{ length: 1 }} entry={{ length: 1 }}>
     {children}
   </TransitionLink>
 )
 
-export { BackgroundSpring, BackgroundSvgSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, SlideTransitionSpringLink }
+export { BackgroundSpring, BackgroundSvgSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, BackgroundTransitionSpring, TransitionSpringLink}

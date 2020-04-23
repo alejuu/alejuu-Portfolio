@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { MySpring } from '../components/react-spring-animation'
+import { BackgroundSvgSpring } from '../components/Animations/IndexAnimations'
 
 const layout = ({ children }) => {
   // const url = window.location.href;
@@ -9,11 +9,12 @@ const layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <MySpring>
         <main className='h-screen'>
           {children}
         </main>
-      </MySpring>      
+      <div className='fixed top-0 left-0 h-full w-full'>
+        <BackgroundSvgSpring />
+      </div>
     </>
   )
 }
