@@ -1,15 +1,17 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { globalHistory as history } from '@reach/router'
 import { SpringLink } from '../components/react-spring-animation'
-
-import { GlobalDispatchContext, GlobalStateContext } from '../context/GlobalContextProvider'
+// Night/Day toggle
+// import React, { useState, useContext } from 'react'
+// import { GlobalDispatchContext, GlobalStateContext } from '../context/GlobalContextProvider'
 
 const Navbar = () => {
-  const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
-  // console.log(state)
-  // console.log(dispatch)
+  // Night/Day toggle
+  // const dispatch = useContext(GlobalDispatchContext)
+  // const state = useContext(GlobalStateContext)
+  // // console.log(state)
+  // // console.log(dispatch)
 
   const [isExpanded, toggleExpansion] = useState(false)
   const { site } = useStaticQuery(graphql`
@@ -78,12 +80,13 @@ const Navbar = () => {
             ))}
           </nav>
         </div>
-        {state.theme}
+        {/* Night/Day toggle */}
+        {/* {state.theme}
         <button type='button' onClick={() => {
           dispatch({type: 'TOGGLE_THEME'})
         }}>
           Toggle Theme
-        </button>
+        </button> */}
       </div>
     </header>
   )
