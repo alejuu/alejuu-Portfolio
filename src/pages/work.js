@@ -3,7 +3,7 @@ import Work from '../components/Work/Work'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import { BackgroundWorkTransitionSpring } from '../components/Animations/IndexAnimations';
+import { BackgroundWorkTransitionSpring, OpacityTransitionSpring } from '../components/Animations/IndexAnimations';
 
 const WorkPage = ({ data }) => {
   return (
@@ -13,9 +13,11 @@ const WorkPage = ({ data }) => {
         title='Work' 
       />
       <BackgroundWorkTransitionSpring className='w-full h-full'>
-        <div className='flex flex-col items-center justify-center w-full h-full'>
-          <Work work={data.workEntry.edges} />
-        </div>
+        <OpacityTransitionSpring className='w-full h-full'>
+          <div className='flex flex-col items-center justify-center w-full h-full'>
+            <Work work={data.workEntry.edges} />
+          </div>
+        </OpacityTransitionSpring>       
       </BackgroundWorkTransitionSpring>     
     </Layout>
   )

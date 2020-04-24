@@ -212,8 +212,8 @@ const TransitionSpringLink= ({ to, className, children }) => (
   <TransitionLink 
     to={to} 
     className={className} 
-    exit={{ length: 3 }} 
-    entry={{ length: 3 }}
+    exit={{ length: 1 }} 
+    entry={{ length: 1 }}
   >
     {children}
   </TransitionLink>
