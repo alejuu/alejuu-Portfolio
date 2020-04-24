@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { BackgroundSVGSpring } from '../components/Animations/IndexAnimations'
+
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
 
@@ -25,6 +27,7 @@ const GlobalContextProvider = ({ children }) => {
   return (
     <GlobalStateContext.Provider value={state}>
       <GlobalDispatchContext.Provider value={dispatch}>
+        <BackgroundSVGSpring />
         {children}
       </GlobalDispatchContext.Provider>
     </GlobalStateContext.Provider>

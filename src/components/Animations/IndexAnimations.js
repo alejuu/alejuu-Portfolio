@@ -153,7 +153,7 @@ const BackgroundIndexTransitionSpring = ({ children, className }) => (
       return (
         <Spring
           to={{ 
-            backgroundImage: `linear-gradient(90deg, ${mount ? '#e6e9f0' : '#8baaaa'}, ${mount ? '#cfd9df' : '#ae8b9c'})`
+            backgroundImage: `linear-gradient(90deg, ${mount ? 'rgba(230, 233, 240, 0.5)' : 'rgba(139, 170, 170, 0.5)'}, ${mount ? 'rgba(207, 217, 223, 0.5)' : 'rgba(174, 139, 156, 0.5)'})`
           }}
           config={{ 
             duration: ms 
@@ -174,7 +174,7 @@ const BackgroundWorkTransitionSpring = ({ children, className }) => (
       return (
         <Spring
           to={{ 
-            backgroundImage: `linear-gradient(90deg, ${mount ? '#8baaaa' : '#e6e9f0'}, ${mount ? '#ae8b9c' : '#cfd9df'})`
+            backgroundImage: `linear-gradient(90deg, ${mount ? 'rgba(139, 170, 170, 0.5)' : 'rgba(230, 233, 240, 0.5)'}, ${mount ? 'rgba(174, 139, 156, 0.5)' : 'rgba(207, 217, 223, 0.5)'})`
           }}
           config={{ 
             duration: ms 
@@ -212,8 +212,8 @@ const TransitionSpringLink= ({ to, className, children }) => (
   <TransitionLink 
     to={to} 
     className={className} 
-    exit={{ length: 1 }} 
-    entry={{ length: 1 }}
+    exit={{ length: 3 }} 
+    entry={{ length: 3 }}
   >
     {children}
   </TransitionLink>
