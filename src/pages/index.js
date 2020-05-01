@@ -1,17 +1,17 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BackgroundIndexTransitionSpring, OpacityTransitionSpring, TransitionSpringLink } from '../components/Animations/IndexAnimations'
+import { BackgroundIndexTransitionSpring, TransitionSpringLink } from '../components/Animations/IndexAnimations'
 
 const index = () => {
   return (
-    <Layout>
-      <SEO
-        keywords={[`alejuu`, `webdeveloper`, `react`, `ui`]}
-        title='Home'
-      />
-      <BackgroundIndexTransitionSpring className='w-full h-full'>
-        <OpacityTransitionSpring className='w-full h-full'>
+    <div>
+      <Layout>
+        <SEO
+          keywords={[`alejuu`, `webdeveloper`, `react`, `ui`]}
+          title='Home'
+        />    
+        <div className='w-full h-full'>
           <div className='grid grid-cols-6 row-gap-0 gap-4 h-full'>
             <div className='relative z-20 h-screen-1/2 md:h-full col-span-6 sm:col-span-6 md:col-span-2 lg:col-span-2 xl:col-span-2'>
               <div className='flex flex-col items-center h-full'>
@@ -39,9 +39,10 @@ const index = () => {
               </div>
             </div>
           </div>
-        </OpacityTransitionSpring>
-      </BackgroundIndexTransitionSpring>   
-    </Layout>
+        </div>
+      </Layout>
+      <BackgroundIndexTransitionSpring />
+    </div>
   )
 }
 

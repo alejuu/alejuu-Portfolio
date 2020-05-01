@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
 import { globalHistory as history } from '@reach/router'
-import { SpringLink } from '../components/react-spring-animation'
+import { TransitionSpringLink } from './Animations/IndexAnimations'
 // Night/Day toggle
 // import React, { useState, useContext } from 'react'
 // import { GlobalDispatchContext, GlobalStateContext } from '../context/GlobalContextProvider'
@@ -40,11 +40,11 @@ const Navbar = () => {
   return (
     <header>
       <div className='fixed z-50 top-auto transform rotate-90 mt-8'>
-        <SpringLink to='/'>
-          <span className={`font-serif font-bold text-xl tracking-tight underline ${logoCurrent}`}>
+        <TransitionSpringLink to='/'>
+          <span className={`font-bold text-xl tracking-tight underline ${logoCurrent}`}>
             {site.siteMetadata.title}
           </span>
-        </SpringLink>
+        </TransitionSpringLink>
       </div>
       <div className='fixed z-50 w-full top-0 mx-auto'>
         <div className={`${navCurrent} flex-wrap items-center justify-end p-2`}>
@@ -64,7 +64,7 @@ const Navbar = () => {
           <nav
             className={`${
               isExpanded ? `block` : `hidden`
-            } md:block md:flex md:items-center w-full md:w-auto`}
+            } md:block md:flex md:items-center w-full md:w-auto pt-2 pr-2`}
           >
             {[
               {
@@ -76,7 +76,7 @@ const Navbar = () => {
                 title: `Work`
               },
             ].map(link => (
-              <SpringLink className='block md:inline-block mt-4 md:mt-0 md:ml-6 font-serif text-black' activeClassName='underline' key={link.title} to={link.route}>{link.title}</SpringLink>
+              <TransitionSpringLink className='block md:inline-block mt-4 md:mt-0 md:ml-6 text-black font-bold' activeClassName='underline' key={link.title} to={link.route}>{link.title}</TransitionSpringLink>
             ))}
           </nav>
         </div>

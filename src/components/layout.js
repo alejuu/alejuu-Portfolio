@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-// import { BackgroundSVGSpring } from '../components/Animations/IndexAnimations'
+import { OpacityTransitionSpring } from './Animations/IndexAnimations'
 
 const layout = ({ children }) => {
   // const url = window.location.href;
@@ -10,11 +10,10 @@ const layout = ({ children }) => {
     <>
       <Navbar />
       <main className='h-screen'>
-        {children}
+        <OpacityTransitionSpring className='w-full h-full'>
+          {children}
+        </OpacityTransitionSpring>
       </main>
-      {/* <div className='fixed top-0 left-0 h-full w-full'>
-        <BackgroundSVGSpring />
-      </div> */}
     </>
   )
 }
