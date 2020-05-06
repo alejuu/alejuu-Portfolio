@@ -99,6 +99,7 @@ const BackgroundIndexTransitionSpring = () => (
 
       return (
         <Spring
+          native
           to={{
             background: `linear-gradient(to right, ${mount ? 'rgba(230, 233, 240, 0.5)' : 'rgba(230, 233, 240, 0.5)'} ${mount ? '50%' : '0%'}, ${mount ? 'rgba(139, 170, 170, 0.5)' : 'rgba(207, 217, 223, 0.5)'} 100%)`,
             zIndex: mount ? '-10' : '-10',
@@ -108,8 +109,9 @@ const BackgroundIndexTransitionSpring = () => (
           }}
         >
           {props => 
-            <div className='fixed inset-0 flex justify-center items-center h-screen w-full transition ease-linear will-change-background' style={props}>
+            <animated.div className='fixed inset-0 flex justify-center items-center h-screen w-full transition ease-linear will-change-background' style={props}>
               <Spring
+                native
                 to={{
                   transform: `scale3d(${mount ? 1.5 : 0.6}, ${mount ? 1.5 : 1.6}, ${mount ? 1.5 : 0.6}) rotate(${mount ? '45deg' : '0deg'})`,
                 }}
@@ -118,8 +120,9 @@ const BackgroundIndexTransitionSpring = () => (
                 }}
               >
                 {props => 
-                  <svg className='w-full h-screen transition ease-linear will-change-transform' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none' style={props}>
+                  <animated.svg className='w-full h-screen transition ease-linear will-change-transform' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none' style={props}>
                     <Spring
+                      native
                       to={{
                         fill: mount ? 'rgba(48,207,208,0.5)' : 'rgba(36,123,160,0.5)',
                       }}
@@ -128,8 +131,9 @@ const BackgroundIndexTransitionSpring = () => (
                       }}
                     >
                       {props => 
-                        <g className='transition ease-linear will-change-background' style={props}>
+                        <animated.g className='transition ease-linear will-change-background' style={props}>
                           <Spring
+                            native
                             to={{
                               shape: mount ? 'M 650 375 L 325 175 L 50 250 L 250 425 Z' : 'M 500 525 L 575 100 L 175 175 L 150 500 Z',
                             }}
@@ -138,16 +142,16 @@ const BackgroundIndexTransitionSpring = () => (
                             }}
                           >
                             {props => 
-                              <path id='path-1' d={props.shape} />
+                              <animated.path id='path-1' d={props.shape} />
                             }
                           </Spring>                         
-                        </g>
+                        </animated.g>
                       }
                     </Spring>
-                  </svg>
+                  </animated.svg>
                 }
               </Spring>
-            </div>
+            </animated.div>
           }
         </Spring>
       )
@@ -162,6 +166,7 @@ const BackgroundWorkTransitionSpring = () => (
 
       return (
         <Spring
+          native
           to={{
             background: `linear-gradient(to right, ${mount ? 'rgba(230, 233, 240, 0.5)' : 'rgba(230, 233, 240, 0.5)'} ${mount ? '0%' : '50%'}, ${mount ? 'rgba(207, 217, 223, 0.5)' : 'rgba(139, 170, 170, 0.5)'} 100%)`,
             zIndex: mount ? '-10' : '-10',
@@ -171,8 +176,9 @@ const BackgroundWorkTransitionSpring = () => (
           }}
         > 
           {props => 
-            <div className='fixed inset-0 flex justify-center items-center h-screen w-full transition ease-linear will-change-background' style={props}>
+            <animated.div className='fixed inset-0 flex justify-center items-center h-screen w-full transition ease-linear will-change-background' style={props}>
               <Spring
+                native
                 to={{
                   transform: `scale3d(${mount ? 0.6 : 1.5}, ${mount ? 1.6 : 1.5}, ${mount ? 0.6 : 1.5}) rotate(${mount ? '0deg' : '45deg'})`,
                 }}
@@ -181,8 +187,9 @@ const BackgroundWorkTransitionSpring = () => (
                 }}
               >
                 {props => 
-                  <svg className='w-full h-screen transition ease-linear will-change-transform' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none' style={props}>
+                  <animated.svg className='w-full h-screen transition ease-linear will-change-transform' version='1.1' viewBox='0 0 600 600' preserveAspectRatio='none' style={props}>
                     <Spring
+                      native
                       to={{
                         fill: mount ? 'rgba(36,123,160,0.5)' : 'rgba(48,207,208,0.5)',
                       }}
@@ -191,8 +198,9 @@ const BackgroundWorkTransitionSpring = () => (
                       }}
                     >
                       {props => 
-                        <g className='transition ease-linear will-change-background' style={props}>
+                        <animated.g className='transition ease-linear will-change-background' style={props}>
                           <Spring
+                            native
                             to={{
                               shape: mount ? 'M 500 525 L 575 100 L 175 175 L 150 500 Z' : 'M 650 375 L 325 175 L 50 250 L 250 425 Z',
                             }}
@@ -201,16 +209,16 @@ const BackgroundWorkTransitionSpring = () => (
                             }}
                           >
                             {props => 
-                              <path id='path-1' d={props.shape} />
+                              <animated.path id='path-1' d={props.shape} />
                             }
                           </Spring>                         
-                        </g>
+                        </animated.g>
                       }
                     </Spring>
-                  </svg>
+                  </animated.svg>
                 }
               </Spring>
-            </div>
+            </animated.div>
           }
         </Spring>
       )
@@ -225,6 +233,7 @@ const OpacityTransitionSpring = ({ children, className }) => (
 
       return (
         <Spring
+          native
           to={{
             transform: `translateY(${mount ? 0 : '100px'})`,
             opacity: mount ? 1 : 0
@@ -234,7 +243,7 @@ const OpacityTransitionSpring = ({ children, className }) => (
             delay: 1500 
           }}
         >
-          {props => <div className={className} style={props}>{children}</div>}
+          {props => <animated.div className={className} style={props}>{children}</animated.div>}
         </Spring>
       )
     }}
