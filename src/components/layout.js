@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { OpacityTransitionSpring } from './Animations/IndexAnimations'
+import { OpacityTransitionSpring } from './Animations/Springs'
 
 const layout = ({ children }) => {
   // const url = window.location.href;

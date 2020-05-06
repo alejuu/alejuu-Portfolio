@@ -2,18 +2,6 @@ import React from 'react'
 import { Keyframes, animated, Spring } from 'react-spring/renderprops'
 import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
 
-const BackgroundSpring = () => {
-  return (
-    <Spring
-      from={{ opacity: 1, zIndex: 100 }}
-      to={{ opacity: 0, zIndex: -1 }}
-      config={{ precision: 0.1, delay: 1200 }}
-    >
-      {props => <div className='absolute top-0 left-0 h-full w-full bg-black transition-opacity duration-500' style={props} />}
-    </Spring> 
-  )
-}
-
 const BackgroundSVGSpring = () => {
   const PathSpring = Keyframes.Spring(async next => {
     while (true) {
@@ -90,7 +78,7 @@ const BackgroundSVGSpring = () => {
   )
 }
 
-const CircleSpring = ({ children, className }) => {
+const CircleSpring = ({ children }) => {
   return (
     <Spring
       from={{ opacity: 1, height: '100px', width: '100px', zIndex: 100 }}
@@ -102,48 +90,7 @@ const CircleSpring = ({ children, className }) => {
   )
 }
 
-const OpacitySpring = ({ children, className }) => {
-  return (
-    <Spring
-      from={{ opacity: 0 }}
-      to={{ opacity: 1 }}
-      config={{ delay: 2965, duration: 1500 }}
-    >
-      {props => <div className={className} style={props}>{children}</div>}
-    </Spring> 
-  )
-}
-
-const SlideSpring = ({ children, className }) => {
-  return (
-    <Spring
-      from={{ transform: `translateX(${-100}vw)` }}
-      to={{ transform: `translateX(0)` }}
-      config={{ delay: 1300, duration: 1800 }}
-    >
-      {props => <div className={className} style={props}>{children}</div>}
-    </Spring> 
-  )
-}
-
 // Page Transitions
-
-const SlideTransitionSpring = ({ children, className }) => (
-  <TransitionState>
-    {({ mount, current }) => {
-      const ms = current.length * 500
-
-      return (
-        <Spring
-          to={{ transform: `translateX(0)` }}
-          config={{ duration: ms }}
-        >
-          {props => <div className={className} style={props}>{children}</div>}
-        </Spring>
-      )
-    }}
-  </TransitionState>
-)
 
 const BackgroundIndexTransitionSpring = () => (
   <TransitionState>
@@ -306,4 +253,4 @@ const TransitionSpringLink= ({ to, className, activeClassName, children }) => (
   </TransitionLink>
 )
 
-export { BackgroundSpring, BackgroundSVGSpring, CircleSpring, OpacitySpring, SlideSpring, SlideTransitionSpring, BackgroundIndexTransitionSpring, BackgroundWorkTransitionSpring, OpacityTransitionSpring, TransitionSpringLink }
+export { BackgroundSVGSpring, CircleSpring, BackgroundIndexTransitionSpring, BackgroundWorkTransitionSpring, OpacityTransitionSpring, TransitionSpringLink }

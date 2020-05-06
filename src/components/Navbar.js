@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState } from 'react'
 import { globalHistory as history } from '@reach/router'
-import { TransitionSpringLink } from './Animations/IndexAnimations'
+import { TransitionSpringLink } from './Animations/Springs'
 // Night/Day toggle
 // import React, { useState, useContext } from 'react'
 // import { GlobalDispatchContext, GlobalStateContext } from '../context/GlobalContextProvider'

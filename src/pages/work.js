@@ -3,7 +3,7 @@ import Work from '../components/Work/Work'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import { BackgroundWorkTransitionSpring } from '../components/Animations/IndexAnimations';
+import { BackgroundWorkTransitionSpring } from '../components/Animations/Springs';
 
 const WorkPage = ({ data }) => {
   return (

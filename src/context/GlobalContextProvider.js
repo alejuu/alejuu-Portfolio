@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BackgroundSVGSpring } from '../components/Animations/IndexAnimations'
+import { BackgroundSVGSpring } from '../components/Animations/Springs'
 
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()

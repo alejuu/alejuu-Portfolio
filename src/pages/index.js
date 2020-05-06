@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BackgroundIndexTransitionSpring, TransitionSpringLink } from '../components/Animations/IndexAnimations'
+import { BackgroundIndexTransitionSpring, TransitionSpringLink } from '../components/Animations/Springs'
 
 const index = () => {
   return (
