@@ -90,6 +90,17 @@ const CircleSpring = ({ children }) => {
   )
 }
 
+const OpcaityOutSpring = ({ children, className }) => {
+  return (
+    <Spring
+      from={{ opacity: 1 }}
+      to={{ opacity: 0 }}
+    >
+      {props => <div className={className} style={props}>{children}</div>}
+    </Spring>
+  )
+}
+
 // Page Transitions
 
 const BackgroundIndexTransitionSpring = () => (
@@ -250,16 +261,17 @@ const OpacityTransitionSpring = ({ children, className }) => (
   </TransitionState>
 )
 
-const TransitionSpringLink= ({ to, className, activeClassName, children }) => (
+const TransitionSpringLink= ({ to, className, activeClassName, onClick, children }) => (
   <TransitionLink 
     to={to} 
     className={className}
-    activeClassName={activeClassName} 
+    activeClassName={activeClassName}
+    onClick={onClick} 
     exit={{ length: 1 }} 
-    entry={{ length: 1 }}
+    entry={{ length: .5 }}
   >
     {children}
   </TransitionLink>
 )
 
-export { BackgroundSVGSpring, CircleSpring, BackgroundIndexTransitionSpring, BackgroundWorkTransitionSpring, OpacityTransitionSpring, TransitionSpringLink }
+export { BackgroundSVGSpring, CircleSpring, OpcaityOutSpring, BackgroundIndexTransitionSpring, BackgroundWorkTransitionSpring, OpacityTransitionSpring, TransitionSpringLink }
