@@ -41,7 +41,7 @@
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.8.5",
     "cssnano": "^4.1.10",
-    "cypress": "^4.10.0",
+    "cypress": "^4.12.0",
     "fkill-cli": "^6.0.1",
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",
